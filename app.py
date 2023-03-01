@@ -3,14 +3,21 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.markdown("""# This is a header
-## This is a sub header but
+
+#headers
+st.markdown("""# Main Page - This is a header
+## This is a sub header
 This is text   """)
 
+
+
+#df
 df = pd.DataFrame({
     'first column': list(range(1, 11)),
     'second column': np.arange(10, 101, 10)
 })
+
+#show code of a check box
 with st.echo():
     st.checkbox("please check my box")
 
@@ -21,5 +28,7 @@ line_count = st.slider('Select a line count', 1, 10, 3)
 
 # and used to select the displayed lines
 head_df = df.head(line_count)
-
 head_df
+
+#secrets
+st.write(st.secrets['my_credential'])
